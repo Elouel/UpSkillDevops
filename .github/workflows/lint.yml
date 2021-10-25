@@ -2,8 +2,14 @@ name: build-python-app
 on:
   pull_request:
     types: [assigned, opened, synchronize, reopened]
+  push:
+    paths:
+    - 'lint_test.py'
 jobs:
-  lint:
+
+  build-on-push:
+    name: build
+
     runs-on: ubuntu-latest
     steps:
       - run: echo "this has been triggered ${{ github.event_name }} event"
@@ -19,10 +25,11 @@ jobs:
           pip install pylint
       - name: Run lint with pylint
         run: python lint_test.py
+
   lint2:
+    name: lint
     runs-on: ubuntu-latest
     steps:
-      - run: echo "this has been triggered ${{ github.event_name }} event"
       - name: "Checkout repository code"
         uses: actions/checkout@v2
       - name: Set up Python 3.9 
