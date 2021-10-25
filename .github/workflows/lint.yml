@@ -6,8 +6,10 @@ on:
     paths:
     - 'lint_test.py'
 jobs:
+
   build-on-push:
     name: build
+
     runs-on: ubuntu-latest
     steps:
       - run: echo "this has been triggered ${{ github.event_name }} event"
@@ -23,6 +25,7 @@ jobs:
           pip install pylint
       - name: Run lint with pylint
         run: python lint_test.py
+
   lint2:
     name: lint
     runs-on: ubuntu-latest
