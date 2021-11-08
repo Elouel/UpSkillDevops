@@ -6,7 +6,7 @@ jobs:
   pre-build:
       env:
         JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for ubuntu'
-        SECRET_PASSWROD: secrets.Password
+        SECRET_PASSWROD: ${{ secrets.Password }}
       runs-on: ubuntu-latest
       steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
