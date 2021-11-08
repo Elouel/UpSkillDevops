@@ -101,7 +101,7 @@ jobs:
         python -m doctest factorial.py
         
   database-integration:
-    needs: build
+    needs: unit-test
     runs-on: ubuntu-latest
     container: node:10.18-jessie
     services:
@@ -140,7 +140,7 @@ jobs:
           args: --severity-threshold=high
         
   deploy:
-    needs: [SAST]
+    needs: [SAST, database-integration]
     runs-on: ubuntu-latest
     steps:
     - name: Deploye
