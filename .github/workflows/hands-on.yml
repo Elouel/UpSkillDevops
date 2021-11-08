@@ -59,3 +59,11 @@ jobs:
       run: |
         python --version
         pycodestyle *.py
+   
+  build:
+    needs: [style, lint]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build
+      run: |
+        echo "Build"
