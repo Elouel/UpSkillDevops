@@ -1,9 +1,7 @@
 name: build-python-app
 env: 
   WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
-on:
-  pull_request:
-      types: [opened, synchronize, reopened]
+on: [push]
 jobs:
   pre-build:
       env:
@@ -143,6 +141,7 @@ jobs:
         
   deploy:
     needs: [SAST, database-integration]
+    if: 1 = 2
     runs-on: ubuntu-latest
     steps:
     - name: Deploye
