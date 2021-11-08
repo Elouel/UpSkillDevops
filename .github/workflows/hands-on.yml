@@ -130,6 +130,7 @@ jobs:
         
   SCA:
     runs-on: ubuntu-latest
+    if: 1 = 2
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
