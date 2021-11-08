@@ -67,3 +67,9 @@ jobs:
     - name: Build
       run: |
         echo "Build"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: factorial.py
+        path: factorial.py
+    echo "Build"
