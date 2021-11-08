@@ -125,7 +125,7 @@ jobs:
           args: --severity-threshold=high
         
   deploy:
-    needs: [unit-test]
+    needs: [SAST]
     runs-on: ubuntu-latest
     steps:
     - name: Deploye
