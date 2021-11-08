@@ -91,3 +91,11 @@ jobs:
       run: |
         python --version
         python -m doctest factorial.py
+        
+  deploy:
+    needs: [unit-test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploye
+      run: |
+        echo "The code has been deployed"
