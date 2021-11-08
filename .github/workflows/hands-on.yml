@@ -72,4 +72,3 @@ jobs:
       with:
         name: factorial.py
         path: factorial.py
-    echo "Build"
