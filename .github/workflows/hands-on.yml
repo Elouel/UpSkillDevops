@@ -67,6 +67,7 @@ jobs:
     - name: Build
       run: |
         echo "Build"
+        echo ls
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
