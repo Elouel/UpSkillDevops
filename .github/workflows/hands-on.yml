@@ -1,6 +1,6 @@
 name: build-python-app
 env: 
-  WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable '
+  WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
 on: [push]
 jobs:
   pre-build:
