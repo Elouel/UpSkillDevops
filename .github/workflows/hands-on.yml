@@ -42,7 +42,7 @@ jobs:
    
   style:
     needs: pre-build
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [ubuntu-latest]
